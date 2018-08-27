@@ -1,0 +1,12 @@
+﻿  Source.cpp
+g:\visual studio\projects\spectrum\spectrum\source.cpp(56): warning C4018: <: несоответствие типов со знаком и без знака
+g:\visual studio\projects\spectrum\spectrum\source.cpp(58): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+g:\visual studio\projects\spectrum\spectrum\source.cpp(59): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+g:\visual studio\projects\spectrum\spectrum\source.cpp(62): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+g:\visual studio\projects\spectrum\spectrum\source.cpp(63): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+g:\visual studio\projects\spectrum\spectrum\source.cpp(66): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+g:\visual studio\projects\spectrum\spectrum\source.cpp(67): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+g:\visual studio\projects\spectrum\spectrum\source.cpp(70): warning C4244: инициализация: преобразование "unsigned int" в "float", возможна потеря данных
+g:\visual studio\projects\spectrum\spectrum\source.cpp(70): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+g:\visual studio\projects\spectrum\spectrum\source.cpp(71): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+  spectrum.vcxproj -> G:\Visual Studio\Projects\spectrum\Debug\spectrum.exe
