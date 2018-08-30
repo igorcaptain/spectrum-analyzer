@@ -7,7 +7,7 @@ SDL_Texture* gTexture = NULL;
 SDL_Surface* gSurface = NULL;
 
 int main(int argc, char* argv[]) {
-
+	ShowWindow(GetConsoleWindow(), SW_HIDE);
 	if (!init())
 		printf("Failed to initializate!\n");
 
@@ -15,15 +15,17 @@ int main(int argc, char* argv[]) {
 	wav* smpl2 = read_wav("1k.wav");
 	int num = 1024;
 	double* data_out = new double[num];
-	double* data_disp = smpl2->data + smpl2->header.subchunk2Size / 2000;
+	double* data_disp = smpl->data + smpl->header.subchunk2Size / 2000;
 	FFTAnalysis(data_disp, data_out, num, num);
 	//for (int i = 0; i < num; i++)
 	//	printf("%lf\n", data_out[i]);
-	//printf("%d\n", search_max(data_out, num));
+	//printf("index=%d, value=%lf\n", search_max(data_out, num));
 	
 	int midx = SCREEN_WIDTH / 2, midy = SCREEN_HEIGHT / 2;
 	int k = 40;
 	int up = 0;
+
+	int flag = 0;
 
 	bool quit = false;
 	SDL_Event e;
@@ -69,7 +71,6 @@ int main(int argc, char* argv[]) {
 			SDL_SetRenderDrawColor(gRenderer, 0xFF, 0x00, 0x00, 0xFF);
 			float x4 = i * smpl->header.sampleRate/num/10, y4 = data_out[i];
 			SDL_RenderDrawPoint(gRenderer, x4, midy + midy * 3 / 4 - y4*k);
-			//(i == 23 || i == 22) ? printf("Freq=%lf\n", (double)(i * smpl->header.sampleRate / num)) : 0;
 		}
 		SDL_RenderPresent(gRenderer);
 		//SDL_RenderPresent(gRenderer);
@@ -77,6 +78,7 @@ int main(int argc, char* argv[]) {
 	
 	delete_wav(smpl);
 	delete_wav(smpl2);
+	delete[]data_out;
 	close();
 	return 0;
 }
