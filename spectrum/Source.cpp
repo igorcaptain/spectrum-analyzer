@@ -1,3 +1,4 @@
+#pragma comment(linker, "/SUBSYSTEM:windows /ENTRY:mainCRTStartup")
 #include "Header.h"
 
 SDL_Window* gWindow = NULL;
@@ -7,7 +8,7 @@ SDL_Texture* gTexture = NULL;
 SDL_Surface* gSurface = NULL;
 
 int main(int argc, char* argv[]) {
-	ShowWindow(GetConsoleWindow(), SW_HIDE);
+	//ShowWindow(GetConsoleWindow(), SW_HIDE);
 	if (!init())
 		printf("Failed to initializate!\n");
 
